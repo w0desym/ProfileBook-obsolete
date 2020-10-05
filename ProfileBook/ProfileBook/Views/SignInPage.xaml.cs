@@ -2,9 +2,9 @@
 
 namespace ProfileBook.Views
 {
-    public partial class SignIn : ContentPage
+    public partial class SignInPage : ContentPage
     {
-        public SignIn()
+        public SignInPage()
         {
             InitializeComponent();
         }

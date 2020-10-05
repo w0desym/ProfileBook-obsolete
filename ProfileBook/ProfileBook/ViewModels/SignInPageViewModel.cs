@@ -4,10 +4,12 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace ProfileBook.ViewModels
 {
-    public class SignInViewModel : ViewModelBase
+    public class SignInPageViewModel : ViewModelBase
     {
         #region AuthorizationInfo
         private AuthorizationInfo authorizationInfo;
@@ -18,11 +20,24 @@ namespace ProfileBook.ViewModels
         }
         #endregion
 
-        public SignInViewModel(INavigationService navigationService)
+        private INavigationService _navigationService;
+        public SignInPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             Title = "Signing In";
             this.authorizationInfo = new AuthorizationInfo();
+            _navigationService = navigationService;
+            
+        }
+
+        public ICommand SignUpClickCommand => new Command<string>(async (url) =>
+        {
+            await NavigationService.NavigateAsync("SignUpPage");
+        });
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            authorizationInfo = null;
         }
     }
 }
