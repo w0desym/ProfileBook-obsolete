@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProfileBook.ViewModels
+namespace ProfileBook
 {
     public class ViewModelBase : BindableBase, IInitialize, INavigationAware, IDestructible
     {
