@@ -17,6 +17,8 @@ namespace ProfileBook
 
         protected override async void OnInitialized()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzI4NDEwQDMxMzgyZTMzMmUzMG8xdjZ0eFdZbE9BSEhiY012eHZpblhWeWlCMjlOdGVWcXBlV0Qvc2FUTzQ9");
+
             InitializeComponent();
 
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
